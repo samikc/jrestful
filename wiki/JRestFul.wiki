@@ -1,0 +1,7 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+JRestful will allow you to create your restful APIs easily by customization xml file or by java annotations.
+
+I will give you the details shortly.
