@@ -17,11 +17,34 @@
  */
 package org.jrestful.core.context;
 
+import java.net.URL;
+
 /**
  * This class captures the restful service related information
  * @author samikc@jrestful.org
  *
  */
 public class RestServiceContext {
-
+	private String serviceName;
+	private String serviceMethod;
+	private String serviceQueryString;
+	private String path;
+	
+	public RestServiceContext(URL url) {
+		this.path = url.getPath();
+		this.serviceQueryString = url.getQuery();
+		this.setServiceName();
+	}
+	
+	private void setServiceName() {
+		
+	}
+	
+	private void setServiceMethod() {
+		
+	}
+	
+	public String getServiceName() {
+		return null;
+	}
 }
