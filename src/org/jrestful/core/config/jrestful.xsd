@@ -4,6 +4,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element maxOccurs="unbounded" ref="include"/>
+        <xs:element ref="security"/>
         <xs:element maxOccurs="unbounded" ref="servicedescribe"/>
       </xs:sequence>
     </xs:complexType>
@@ -13,10 +14,18 @@
       <xs:attribute name="location" use="required"/>
     </xs:complexType>
   </xs:element>
+  <xs:element name="security">
+    <xs:complexType>
+      <xs:attribute name="processor" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="servicedescribe">
     <xs:complexType>
       <xs:sequence minOccurs="0">
         <xs:element ref="paramprocessor"/>
+        <xs:element ref="pre"/>
+        <xs:element ref="post"/>
+        <xs:element ref="result"/>
         <xs:element ref="methodmap"/>
       </xs:sequence>
       <xs:attribute name="name" use="required" type="xs:string"/>
@@ -26,6 +35,21 @@
   <xs:element name="paramprocessor">
     <xs:complexType>
       <xs:attribute name="provider" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pre">
+    <xs:complexType>
+      <xs:attribute name="processor" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="post">
+    <xs:complexType>
+      <xs:attribute name="processor" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="result">
+    <xs:complexType>
+      <xs:attribute name="processor" use="required" type="xs:string"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="methodmap">
