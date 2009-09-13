@@ -15,26 +15,12 @@
  * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package org.jrestful.core.servlet;
-
-import java.io.IOException;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
+package org.jrestful.core;
 
 /**
- * @author samikc@jrestful.org
+ * @author samikc
  *
  */
-public class JrestfulServlet extends HttpServlet {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2908609810651616446L;
-	
-	public void doPost() throws ServletException,IOException{
-		
-	}
-
+public class Constants {
+	public static final String JRESTFUL_URL_CONTEXT = "service";
 }
