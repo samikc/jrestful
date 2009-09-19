@@ -71,5 +71,39 @@ public class RestServiceContextTest extends TestCase {
 			assertTrue("Caught the null pointer exception",true);
 		}
 	}
+	
+	public void testGetServiceMethod() {
+		URL url1 = null;
+		URL url2 = null;
+		URL url3 = null;
+		URL url4 = null;
+		URL url5 = null;
+		try {
+			url1 = new URL("http://localhost/some/service/hello/hello?msg=hello");
+			url2 = new URL("http://localhost/some/service/bolo/solo?msg=hello");
+			url3 = new URL("http://localhost/some/other/service/bolo/more?msg=hello");
+			url4 = new URL("http://localhost/some/other/service/some?msg=hello");
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		RestServiceContext rs1 = new RestServiceContext(url1);
+		RestServiceContext rs2 = new RestServiceContext(url2);
+		RestServiceContext rs3 = new RestServiceContext(url3);
+		RestServiceContext rs4 = new RestServiceContext(url4);
+		
+		//assertTrue("Expected : [\"/some/service/hello\"] but got : ["+rs1.getPath()+"]",rs1.getPath().equals("/some/service/hello"));
+		assertTrue(rs1.getServiceMethod().equals("hello"));
+		assertTrue(rs2.getServiceMethod().equals("solo"));
+		assertTrue(rs3.getServiceMethod().equals("more"));
+		assertNull("Expecpted [null] but got ["+rs4.getServiceMethod()+"]",rs4.getServiceMethod());
+		try {
+			RestServiceContext rs5 = new RestServiceContext(url5);
+			rs5.getServiceName();
+			fail("Should have been a null pointer exception");
+		} catch (NullPointerException e) {
+			assertTrue("Caught the null pointer exception",true);
+		}
+	}
 
 }
