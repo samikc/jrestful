@@ -29,17 +29,19 @@ public class Context {
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	private RestServiceContext serviceContext;
+	private HttpMethod method;
 	/**
 	 * @param request
 	 * @param response
 	 * @param serviceContext
 	 */
 	public Context(HttpServletRequest request, HttpServletResponse response,
-			RestServiceContext serviceContext) {
+			RestServiceContext serviceContext,HttpMethod m) {
 		super();
 		this.request = request;
 		this.response = response;
 		this.serviceContext = serviceContext;
+		this.method = m;
 	}
 	/**
 	 * @return the request
