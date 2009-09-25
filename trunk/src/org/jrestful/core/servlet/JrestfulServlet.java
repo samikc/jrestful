@@ -18,9 +18,17 @@
 package org.jrestful.core.servlet;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.jrestful.core.context.Context;
+import org.jrestful.core.context.HttpMethod;
+import org.jrestful.core.context.RestServiceContext;
 
 /**
  * @author samikc@jrestful.org
@@ -32,9 +40,38 @@ public class JrestfulServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = -2908609810651616446L;
-	
-	public void doPost() throws ServletException,IOException{
-		
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
+	 */
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
+	 */
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+	private Context createContext(HttpServletRequest request, HttpServletResponse response,HttpMethod m) throws MalformedURLException{
+		URL url = new URL(request.getRequestURL().toString());
+		RestServiceContext serviceContext = new RestServiceContext(url);
+		Context context = new Context(request, response, serviceContext, m);
+		return context;
+
+	}
 }

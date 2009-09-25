@@ -15,13 +15,15 @@
  * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package org.jrestful.core;
+package org.jrestful.core.config;
+
 
 /**
+ * Configurator loads the jrestful.xml from the "resources" folder in the classpath.
+ * In jrestful.xml one can define all the related classes that he wants to create a restful API
  * @author samikc
  *
  */
-public class Constants {
-	public static final String JRESTFUL_URL_CONTEXT = "service";
-	public static final String JRESTFUL_RESOURCE_XML = "resources/jrestful.xml";
+public class Configurator {
+	
 }

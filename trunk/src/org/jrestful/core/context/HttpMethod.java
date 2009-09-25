@@ -15,13 +15,22 @@
  * KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package org.jrestful.core;
+package org.jrestful.core.context;
 
 /**
- * @author samikc
+ * @author samikc@jrestful.org
  *
  */
-public class Constants {
-	public static final String JRESTFUL_URL_CONTEXT = "service";
-	public static final String JRESTFUL_RESOURCE_XML = "resources/jrestful.xml";
+public enum HttpMethod {
+	GET("GET"),
+	POST("POST"),
+	PUT("PUT"),
+	DELETE("DELETE");
+	private String name;
+	private HttpMethod(String name) {
+		this.name = name;
+	}
+	public String getName() {
+		return this.name;
+	}
 }
