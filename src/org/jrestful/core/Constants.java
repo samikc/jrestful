@@ -23,5 +23,6 @@ package org.jrestful.core;
  */
 public class Constants {
 	public static final String JRESTFUL_URL_CONTEXT = "service";
-	public static final String JRESTFUL_RESOURCE_XML = "resources/jrestful.xml";
+	public static final String JRESTFUL_RESOURCE_XML = "resources/jrestful-resource.xml";
+	public static final String JRESTFUL_EXTENSION_XML = "resources/jrestful-extension.xml";
 }
