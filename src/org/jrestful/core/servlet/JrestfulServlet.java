@@ -26,9 +26,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.jrestful.core.context.Context;
-import org.jrestful.core.context.HttpMethod;
-import org.jrestful.core.context.RestServiceContext;
 
 /**
  * @author samikc@jrestful.org
@@ -66,12 +63,5 @@ public class JrestfulServlet extends HttpServlet {
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	}
-	private Context createContext(HttpServletRequest request, HttpServletResponse response,HttpMethod m) throws MalformedURLException{
-		URL url = new URL(request.getRequestURL().toString());
-		RestServiceContext serviceContext = new RestServiceContext(url);
-		Context context = new Context(request, response, serviceContext, m);
-		return context;
-
 	}
 }
