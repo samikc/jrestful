@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="jrestful-extension">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="resource-discovery"/>
+        <xs:element ref="param-args"/>
+        <xs:element ref="security"/>
+        <xs:element ref="context"/>
+        <xs:element ref="pre"/>
+        <xs:element ref="post"/>
+        <xs:element ref="result"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resource-discovery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ext"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="param-args">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ext"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="security">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ext"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="context">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ext"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ext"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="post">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ext"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ext"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ext">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+      <xs:attribute name="provider" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

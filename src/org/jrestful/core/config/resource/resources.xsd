@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="jrestful-resources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="resource"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="extension"/>
+      </xs:sequence>
+      <xs:attribute name="author"/>
+      <xs:attribute name="email"/>
+      <xs:attribute name="provider" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extension">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="resource-discovery"/>
+        <xs:element ref="param-args"/>
+        <xs:element ref="security"/>
+        <xs:element ref="context"/>
+        <xs:element ref="pre"/>
+        <xs:element ref="post"/>
+        <xs:element ref="result"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resource-discovery">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="param-args">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="security">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="context">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pre">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="post">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="result">
+    <xs:complexType>
+      <xs:attribute name="id" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
